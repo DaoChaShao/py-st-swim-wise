@@ -17,6 +17,9 @@ A collection of utility tools designed for Streamlit page initialisation and cor
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
-__all__ = [
+from .layout import config_page, set_pages
 
+__all__ = [
+    "config_page",
+    "set_pages",
 ]
