@@ -6,10 +6,14 @@
 # @File     :   home.py
 # @Desc     :   
 
-def main() -> None:
-    """ Main Function """
-    pass
+from streamlit import title, expander, caption, empty
 
+empty_message = empty()
+empty_message.info("Please check the details at the different pages of core functions.")
 
-if __name__ == "__main__":
-    main()
+title("Swim Wise")
+with expander("**INTRODUCTION (CN)**", expanded=False):
+    caption("+ ")
+
+with expander("**INTRODUCTION (EN)**", expanded=True):
+    caption("+ ")
