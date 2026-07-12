@@ -115,33 +115,24 @@ class RandomSeedForNumpy:
 
 
 @timer
-def load_csv(csv_path: str | Path, *, show_content: bool = True) -> None:
+def load_csv(csv_path: str | Path, *, show_content: bool = True, show_summary: bool = False) -> DataFrame:
     """ Read data from a dataset file
-    :param csv_path: path to the CSV file
-    :param show_content: whether to print the content of the dataset
+    :param csv_path: Target path to the file.
+    :param show_content: Toggle for printing the first few rows.
+    :param show_summary: Toggle for basic statistics and quality checks.
+    :return: Loaded Pandas DataFrame.
     """
     dataset: DataFrame = read_csv(str(csv_path))
 
     if show_content:
         print(dataset.head())
 
-    # y: DataFrame = dataset[:, -1]
-    # X: DataFrame = dataset.drop(dataset.columns[0], axis=1)
-    #
-    # print(f"X's type is {type(X)}, and its shape is {X.shape}.")
-    # print(f"y's type is {type(y)}, and its shape is {y.shape}.")
+    if show_summary:
+        print(dataset.describe())
+        print(f"Missing Values: {dataset.isnull().sum()[dataset.isnull().sum() > 0]}")
+        print(f"Duplicated Rows: {dataset.duplicated().sum()}")
 
-    # return X, y
-
-
-@timer
-def summary_dataframe(data: DataFrame) -> None:
-    """ Print summary statistics of the data
-    :param data: DataFrame containing the data
-    """
-    print(data.describe())
-    print(f"Missing Values: {data.isnull().sum()[data.isnull().sum() > 0]}")
-    print(f"Duplicated Rows: {data.duplicated().sum()}")
+    return dataset
 
 
 if __name__ == "__main__":
