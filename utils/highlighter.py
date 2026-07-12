@@ -145,7 +145,7 @@ def strikethrough(text: int | float | str):
     return f"\033[9m{text}\033[0m"
 
 
-def starts(text: str = "", length: int = WIDTH):
+def stars(text: str = "", length: int = WIDTH):
     if text:
         left = (length - len(text)) // 2
         right = length - len(text) - left
