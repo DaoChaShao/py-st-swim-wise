@@ -18,31 +18,33 @@ and classes designed for general data processing tasks.
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
+from .config import BASE_CONFIG
 from .decorator import beautifier, timer
 from .helper import (Beautifier, Timer,
                      RandomSeedForGeneral,
-                     read_file, read_files)
+                     load_file, load_files)
 from .highlighter import (black, red, green, yellow, blue, purple, cyan, white,
                           bold, underline, invert, strikethrough,
-                          starts, lines, sharps)
+                          stars, lines, sharps)
 from .stats import (RandomSeedForNumpy,
-                    load_csv, summary_dataframe)
+                    load_csv)
 
 __all__ = [
+    "BASE_CONFIG",
+
     "beautifier",
     "timer",
 
     "Beautifier",
     "Timer",
     "RandomSeedForGeneral",
-    "read_file",
-    "read_files",
+    "load_file",
+    "load_files",
 
     "black", "red", "green", "yellow", "blue", "purple", "cyan", "white",
     "bold", "underline", "invert", "strikethrough",
-    "starts", "lines", "sharps",
+    "stars", "lines", "sharps",
 
     "RandomSeedForNumpy",
     "load_csv",
-    "summary_dataframe"
 ]
