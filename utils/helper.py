@@ -168,7 +168,7 @@ class RandomSeedForGeneral:
         return base
 
 
-def read_file(file_path: str | Path, *, mode: str = "r", encoding: str = "utf-8", show_content: bool = False) -> str:
+def load_file(file_path: str | Path, *, mode: str = "r", encoding: str = "utf-8", show_content: bool = False) -> str:
     """ Read content from a file
     :param file_path: Path to the target file.
     :param mode: File opening mode (e.g., 'r').
@@ -185,14 +185,14 @@ def read_file(file_path: str | Path, *, mode: str = "r", encoding: str = "utf-8"
     return content
 
 
-def read_files(file_paths: list[str | Path], *, workers: int = 10) -> list[str]:
+def load_files(file_paths: list[str | Path], *, workers: int = 10) -> list[str]:
     """ Read multiple files in parallel
     :param file_paths: list of file paths
     :param workers: number of parallel workers
     :return: list of texts extracted from these targets
     """
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        contents = list(executor.map(read_file, file_paths))
+        contents = list(executor.map(load_file, file_paths))
 
     return contents
 
