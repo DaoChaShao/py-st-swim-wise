@@ -13,7 +13,7 @@ from app.subpages.preview import miss_values
 
 NOTIFICATIONS = empty()
 
-if "RAW" not in session_state:
+if "RAW" not in session_state or "REST_COLS" not in session_state:
     NOTIFICATIONS.warning("Please upload a file first!")
     stop()
 
@@ -36,7 +36,7 @@ if "DATA" not in session_state:
         .transform(lambda x: x.fillna(x.mean()))
     )
 
-    session_state["DATA"] = sorted_data
+    session_state["DATA"] = sorted_data[session_state["REST_COLS"]]
 
 dup_rows: int = session_state["DATA"].duplicated().sum()
 miss_values: int = session_state["DATA"].isnull().sum().sum()
