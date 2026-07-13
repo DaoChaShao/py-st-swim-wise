@@ -17,6 +17,4 @@ Automatically loaded by Streamlit as multipage structure.
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
-__all__ = [
-    "home",
-]
+__all__ = []
