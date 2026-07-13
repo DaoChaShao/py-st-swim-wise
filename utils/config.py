@@ -23,7 +23,7 @@ class Database:
 @dataclass
 class FilePaths:
     API_KEY: Path = BASE_DIR / "data" / "api_keys.yaml"
-    DATA: Path = BASE_DIR / "data" / "Swimming_Dataset.csv"
+    DATA: Path = BASE_DIR / "data" / "athlete_recovery_synthetic.csv"
     LOGS: Path = BASE_DIR / "logs"
     SQLITE: Path = BASE_DIR / "data" / "sqlite3.db"
 
