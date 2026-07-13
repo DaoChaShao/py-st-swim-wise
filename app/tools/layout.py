@@ -28,11 +28,11 @@ def set_pages() -> None:
     pages: dict = {
         "page": [
             "app/subpages/home.py",
-            "app/subpages/display.py",
+            "app/subpages/preview.py",
         ],
         "title": [
             "Home",
-            "Data Display",
+            "Data Preview",
         ],
         "icon": [
             ":material/home:",
