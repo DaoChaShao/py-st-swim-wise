@@ -7,7 +7,7 @@
 # @Desc     :   
 
 from numpy import random as np_random
-from pandas import DataFrame, read_csv
+from pandas import DataFrame, Series, read_csv
 from pathlib import Path
 from random import seed as rnd_seed, getstate, setstate
 from time import perf_counter
@@ -115,22 +115,27 @@ class RandomSeedForNumpy:
 
 
 @timer
-def load_csv(csv_path: str | Path, *, show_content: bool = True, show_summary: bool = False) -> DataFrame:
+def load_csv(csv_path: str | Path, *, dis_content: bool = True, dis_summary: bool = False) -> DataFrame:
     """ Read data from a dataset file
     :param csv_path: Target path to the file.
-    :param show_content: Toggle for printing the first few rows.
-    :param show_summary: Toggle for basic statistics and quality checks.
+    :param dis_content: Toggle for printing the first few rows.
+    :param dis_summary: Toggle for basic statistics and quality checks.
     :return: Loaded Pandas DataFrame.
     """
     dataset: DataFrame = read_csv(str(csv_path))
 
-    if show_content:
+    if dis_content:
         print(dataset.head())
 
-    if show_summary:
+    if dis_summary:
         print(dataset.describe())
-        print(f"Missing Values: {dataset.isnull().sum()[dataset.isnull().sum() > 0]}")
-        print(f"Duplicated Rows: {dataset.duplicated().sum()}")
+
+        dup_rows: int = dataset.duplicated().sum()
+        miss_values: int = dataset.isnull().sum().sum()
+        miss_details: Series = dataset.isnull().sum()[dataset.isnull().sum() > 0]
+        print(f"Duplicated Rows: {dup_rows}")
+        print(f"Missing Values: {miss_values}")
+        print(f"Missing Values Details: \n{miss_details}")
 
     return dataset
 
