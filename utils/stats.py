@@ -21,7 +21,8 @@ class RandomSeedForNumpy:
     """ Setting numpy random seed for reproducibility """
 
     def __init__(self, description: str, seed: int = 27, tick_tock: bool = False):
-        """ Initialise the RandomSeed class
+        """
+        Initialise the RandomSeed class
         :param description: the description of a random seed
         :param seed: the seed value to be set
         :param tick_tock: whether to measure elapsed time
@@ -81,7 +82,8 @@ class RandomSeedForNumpy:
 
     @staticmethod
     def _format_time(seconds: float) -> str:
-        """ Format time breakdown from seconds to days, hours, minutes, and seconds
+        """
+        Format time breakdown from seconds to days, hours, minutes, and seconds
         :param seconds: time in seconds
         :return: formatted time breakdown string
         """
@@ -116,7 +118,8 @@ class RandomSeedForNumpy:
 
 @timer
 def load_csv(csv_path: str | Path, *, dis_content: bool = True, dis_summary: bool = False) -> DataFrame:
-    """ Read data from a dataset file
+    """
+    Read data from a dataset file
     :param csv_path: Target path to the file.
     :param dis_content: Toggle for printing the first few rows.
     :param dis_summary: Toggle for basic statistics and quality checks.
