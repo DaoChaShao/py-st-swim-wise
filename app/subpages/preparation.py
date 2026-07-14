@@ -14,7 +14,7 @@ from app.subpages.preview import miss_values
 NOTIFICATIONS = empty()
 
 if "RAW" not in session_state or "REST_COLS" not in session_state:
-    NOTIFICATIONS.warning("Please upload a file first!")
+    NOTIFICATIONS.warning("Please upload a file first or select the columns to rest.")
     stop()
 
 if "DATA" not in session_state:
