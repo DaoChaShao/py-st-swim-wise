@@ -10,7 +10,8 @@ WIDTH: int = 64
 
 
 def black(text: int | float | str):
-    """ Highlight text with Black
+    """
+    Highlight text with Black
     :param text: text to be highlighted
     :return: text is highlighted with Black
     """
@@ -23,7 +24,8 @@ def black(text: int | float | str):
 
 
 def red(text: int | float | str):
-    """ Highlight text with Red
+    """
+    Highlight text with Red
     :param text: text to be highlighted
     :return: text is highlighted with Red
     """
@@ -36,7 +38,8 @@ def red(text: int | float | str):
 
 
 def green(text: int | float | str):
-    """ Highlight text with Green
+    """
+    Highlight text with Green
     :param text: text to be highlighted
     :return: text is highlighted with Green
     """
@@ -49,7 +52,8 @@ def green(text: int | float | str):
 
 
 def yellow(text: int | float | str):
-    """ Highlight text with Yellow
+    """
+    Highlight text with Yellow
     :param text: text to be highlighted
     :return: text is highlighted with Yellow
     """
@@ -62,7 +66,8 @@ def yellow(text: int | float | str):
 
 
 def blue(text: int | float | str):
-    """ Highlight text with Blue
+    """
+    Highlight text with Blue
     :param text: text to be highlighted
     :return: text is highlighted with Blue
     """
@@ -75,7 +80,8 @@ def blue(text: int | float | str):
 
 
 def purple(text: int | float | str):
-    """ Highlight text with Purple
+    """
+    Highlight text with Purple
     :param text: text to be highlighted
     :return: text is highlighted with Purple
     """
@@ -88,7 +94,8 @@ def purple(text: int | float | str):
 
 
 def cyan(text: int | float | str):
-    """ Highlight text with Cyan
+    """
+    Highlight text with Cyan
     :param text: text to be highlighted
     :return: text is highlighted with Cyan
     """
@@ -101,7 +108,8 @@ def cyan(text: int | float | str):
 
 
 def white(text: int | float | str):
-    """ Highlight text with White
+    """
+    Highlight text with White
     :param text: text to be highlighted
     :return: text is highlighted with White
     """
@@ -114,7 +122,8 @@ def white(text: int | float | str):
 
 
 def bold(text: int | float | str):
-    """ Bold text
+    """
+    Bold text
     :param text: text to be bolded
     :return: text is bolded
     """
@@ -122,7 +131,8 @@ def bold(text: int | float | str):
 
 
 def underline(text: int | float | str):
-    """ Underline text
+    """
+    Underline text
     :param text: text to be underlined
     :return: text is underlined
     """
@@ -130,7 +140,8 @@ def underline(text: int | float | str):
 
 
 def invert(text: int | float | str):
-    """ Invert text color
+    """
+    Invert text color
     :param text: text to be inverted
     :return: text color is inverted
     """
@@ -138,7 +149,8 @@ def invert(text: int | float | str):
 
 
 def strikethrough(text: int | float | str):
-    """ Strikethrough text
+    """
+    Strikethrough text
     :param text: text to be strikethrough
     :return: text is strikethrough
     """
@@ -146,6 +158,12 @@ def strikethrough(text: int | float | str):
 
 
 def stars(text: str = "", length: int = WIDTH):
+    """
+    Draw stars
+    :param text: text to be written down between stars
+    :param length: how many stars to draw
+    :return:
+    """
     if text:
         left = (length - len(text)) // 2
         right = length - len(text) - left
@@ -155,6 +173,12 @@ def stars(text: str = "", length: int = WIDTH):
 
 
 def lines(text: str = "", length: int = WIDTH):
+    """
+    Draw lines
+    :param text: text to be written down between short lines
+    :param length: how many short lines to draw
+    :return:
+    """
     if text:
         left = (length - len(text)) // 2
         right = length - len(text) - left
@@ -164,6 +188,12 @@ def lines(text: str = "", length: int = WIDTH):
 
 
 def sharps(text: str = "", length: int = WIDTH):
+    """
+    Draw sharps
+    :param text: text to be written down between sharps
+    :param length: how many sharps to draw
+    :return:
+    """
     if text:
         left = (length - len(text)) // 2
         right = length - len(text) - left
