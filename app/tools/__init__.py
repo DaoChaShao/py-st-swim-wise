@@ -18,8 +18,11 @@ __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
 from .layout import config_page, set_pages
+from .lever import get_injury_risk_status
 
 __all__ = [
     "config_page",
     "set_pages",
+
+    "get_injury_risk_status"
 ]
