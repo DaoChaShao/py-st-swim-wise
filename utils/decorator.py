@@ -13,7 +13,8 @@ WIDTH: int = 64
 
 
 def beautifier(func):
-    """ The decorator for beautifying function output
+    """
+    The decorator for beautifying function output
     :param func: The function to be decorated
     :return: The decorated function
     """
@@ -34,7 +35,8 @@ def beautifier(func):
 
 
 def timer(func):
-    """ The decorator for timing functions
+    """
+    The decorator for timing functions
     :param func: The function to be decorated
     :return: The decorated function
     """
