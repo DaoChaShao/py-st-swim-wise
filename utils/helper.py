@@ -18,7 +18,8 @@ class Beautifier(object):
     """ beautifying code blocks using a context manager """
 
     def __init__(self, description: str = None):
-        """ Initialise the Beautifier class
+        """
+        Initialise the Beautifier class
         :param description: the description of a beautifier
         """
         self._description: str = description
@@ -42,7 +43,8 @@ class Timer(object):
     """ timing code blocks using a context manager """
 
     def __init__(self, description: str = None, precision: int = 5):
-        """ Initialise the Timer class
+        """
+        Initialise the Timer class
         :param description: the description of a timer
         :param precision: the number of decimal places to round the elapsed time
         """
@@ -81,7 +83,8 @@ class RandomSeedForGeneral:
     """ Setting random seed for reproducibility """
 
     def __init__(self, description: str, seed: int = 27, tick_tock: bool = False) -> None:
-        """ Initialise the RandomSeed class
+        """
+        Initialise the RandomSeed class
         :param description: the description of a random seed
         :param seed: the seed value to be set
         :param tick_tock: whether to time the random seed setting
@@ -135,7 +138,8 @@ class RandomSeedForGeneral:
 
     @staticmethod
     def _format_time(seconds: float) -> str:
-        """ Format time breakdown from seconds to days, hours, minutes, and seconds
+        """
+        Format time breakdown from seconds to days, hours, minutes, and seconds
         :param seconds: time in seconds
         :return: formatted time breakdown string
         """
@@ -169,7 +173,8 @@ class RandomSeedForGeneral:
 
 
 def load_file(file_path: str | Path, *, mode: str = "r", encoding: str = "utf-8", show_content: bool = False) -> str:
-    """ Read content from a file
+    """
+    Read content from a file
     :param file_path: Path to the target file.
     :param mode: File opening mode (e.g., 'r').
     :param encoding: Character encoding (e.g., 'utf-8').
@@ -186,7 +191,8 @@ def load_file(file_path: str | Path, *, mode: str = "r", encoding: str = "utf-8"
 
 
 def load_files(file_paths: list[str | Path], *, workers: int = 10) -> list[str]:
-    """ Read multiple files in parallel
+    """
+    Read multiple files in parallel
     :param file_paths: list of file paths
     :param workers: number of parallel workers
     :return: list of texts extracted from these targets
