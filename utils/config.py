@@ -44,10 +44,18 @@ class Punctuations:
 
 
 @dataclass
+class AcuteToChronicWorkloadRatio:
+    UNDER: float = 0.8
+    SWEET_SPOT: float = 1.3
+    DANGER: float = 1.5
+
+
+@dataclass
 class BaseConfig:
     DATABASE: Database = field(default_factory=Database)
     FILE_PATHS: FilePaths = field(default_factory=FilePaths)
     PUNCTUATIONS: Punctuations = field(default_factory=Punctuations)
+    ACWR: AcuteToChronicWorkloadRatio = field(default_factory=AcuteToChronicWorkloadRatio)
 
 
 BASE_CONFIG = BaseConfig()
