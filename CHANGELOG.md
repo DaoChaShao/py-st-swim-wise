@@ -41,11 +41,13 @@
 
 ### Bug Fixes
 
+- **docs:** correct spacing and formatting in Chinese README ([7fa6f0e](https://github.com/DaoChaShao/py-st-swim-wise/commit/7fa6f0e1bdae43cc4ccee2e9a723577c407ad5ea))
 - **preparation:** update warning message for file upload requirement ([a93ba77](https://github.com/DaoChaShao/py-st-swim-wise/commit/a93ba77a6381ff01c8888a82c905ed7af91d70c8))
 - **preparation:** ensure data filtering uses rest columns selection ([fd8d041](https://github.com/DaoChaShao/py-st-swim-wise/commit/fd8d0416abe67b5bce1fb019b8ee528bcdd98b77))
 
 ### Chore
 
+- **project:** add initial changelog for version 0.1.0 ([b3c4317](https://github.com/DaoChaShao/py-st-swim-wise/commit/b3c4317ce6f02dd80e0243bf188ee8ca7fec0aab))
 - **deps:** update uv.lock with new package dependencies ([0e4ed53](https://github.com/DaoChaShao/py-st-swim-wise/commit/0e4ed53d94c68b1df5cc86b0dd4b1cad8537b31d))
 - **subpages:** explicitly state package exports no public APIs ([ef95030](https://github.com/DaoChaShao/py-st-swim-wise/commit/ef9503096c236eebf5e9df38bd953d6c2497ec64))
 - **config:** update dataset file path in configuration ([702ba1d](https://github.com/DaoChaShao/py-st-swim-wise/commit/702ba1d67a3ddb6ee2a9a3d47c3beb8ed6e57ad9))
