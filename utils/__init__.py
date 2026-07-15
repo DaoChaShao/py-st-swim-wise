@@ -18,6 +18,7 @@ and classes designed for general data processing tasks.
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
+from .apis import DeepSeekCompleter
 from .config import BASE_CONFIG
 from .decorator import beautifier, timer
 from .helper import (Beautifier, Timer,
@@ -30,6 +31,8 @@ from .stats import (RandomSeedForNumpy,
                     load_csv)
 
 __all__ = [
+    "DeepSeekCompleter",
+
     "BASE_CONFIG",
 
     "beautifier",
