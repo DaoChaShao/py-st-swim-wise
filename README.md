@@ -14,6 +14,21 @@ AI Swimming Scientist" for every athlete.
 **DATA DESCRIPTION**
 ---
 
+This project utilizes the
+**[Multimodal Wearable Swimming Dataset](https://www.kaggle.com/datasets/programmer3/multimodal-wearable-swimming-dataset)**
+sourced from Kaggle. The dataset contains continuous longitudinal monitoring data of competitive swimmers over a
+28-day period. Collected via multimodal wearable sensors, it tracks physiological metrics and training loads to analyze
+athletes' recovery tracking, training adaptation, and potential injury risks.
+
+For advanced workload monitoring and insights, the following sports science metrics are calculated during data
+preparation:
+
++ **Daily Load**: Calculated as $Training\_Duration\_Min \times Training\_Intensity$.
++ **Acute Training Load (ATL):** A rolling 7-day average of the Daily Load, representing short-term fatigue.
++ **Chronic Training Load (CTL):** A rolling 28-day average of the Daily Load, representing long-term fitness/historic
+  load.
++ **Acute-to-Chronic Workload Ratio (ACWR):** The ratio of Acute Load to Chronic Load (ATL / CTL), standardly used to
+  monitor training progression and mitigate injury spikes.
 
 **PRIVACY NOTICE**
 ---
