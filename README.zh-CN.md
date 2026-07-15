@@ -12,8 +12,21 @@
 **数据描述**
 ---
 
+本研究使用的是来自 Kaggle 的
+多模态可穿戴游泳运动
+**数据集 ([Multimodal Wearable Swimming Dataset](https://www.kaggle.com/datasets/programmer3/multimodal-wearable-swimming-dataset))**
+。该数据集记录了多名游泳运动员在 28 天周期内的连续监测数据，旨在通过可穿戴设备采集的多模态生理与训练指标，评估运动员的日常训练负荷、身体恢复状态以及潜在的运动损伤风险。
+
+在数据预处理与监控阶段，我们基于原始数据衍生了以下运动科学核心指标：
+
++ **Daily Load (当日负荷)**: 训练时长 × 训练强度 ($Training\_Duration\_Min \times Training\_Intensity$)。
++ **Acute Training Load (ATL / 急性训练负荷)**: 运动员过去 7 天的 Daily Load 滚动平均值。
++ **Chronic Training Load (CTL / 慢性训练负荷)**: 运动员过去 28 天的 Daily Load 滚动平均值。
++ **ACWR (急慢性期工作负荷比)**: 急性负荷 / 慢性负荷 (ATL / CTL)，用于预测运动员的疲劳程度和受伤风险。
+
 **隐私声明**
 ---
+
 本应用程序旨在处理您提供的数据以生成定制化的建议和结果。您的隐私至关重要。
 
 **我们不会收集、存储或传输您的个人信息或数据。** 所有处理都在您的设备本地进行（在浏览器或运行时环境中），*
