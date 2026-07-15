@@ -10,7 +10,8 @@ from pandas import DataFrame, Series
 from streamlit import (empty, session_state, stop,
                        data_editor,
                        selectbox,
-                       columns, metric)
+                       columns, metric,
+                       line_chart)
 
 from app.tools import get_injury_risk_status
 from utils import BASE_CONFIG
@@ -57,39 +58,47 @@ with right:
     days: list = sorted(athlete_days["Day"].unique())
     day: str = selectbox("2. Select a specific day", days, help="Select a specific day to view ACWR data")
     details: Series = athlete_days[athlete_days["Day"] == day].iloc[0]
-    print(details)
+    # print(details)
 
-    DTL, ATL, CTL, ACWR = DISPLAYER.columns(4)
-    with DTL:
-        metric(
-            "Daily Load",
-            f"{details["Daily_Load"]:.2f}",
-            help="Daily Training Load (Duration × Intensity)"
-        )
-    with ATL:
-        metric(
-            "Acute Load",
-            f"{details["Acute_Load"]:.2f}",
-            help="Acute Training Load (7-day rolling average)"
-        )
-    with CTL:
-        metric(
-            "Chronic Load",
-            f"{details["Chronic_Load"]:.2f}",
-            help="Chronic Training Load (28-day rolling average)"
-        )
-    with ACWR:
-        metric(
-            "ACWR",
-            f"{details["ACWR"]:.2f}",
-            delta=get_injury_risk_status(details["ACWR"]),
-            delta_color="off" if details["ACWR"] <= BASE_CONFIG.ACWR.SWEET_SPOT else "inverse",
-            help="Acute-to-Chronic Workload Ratio (Acute Load / Chronic Load)"
-        )
+# 1104-21 1183-26
+DTL, ATL, CTL, ACWR = DISPLAYER.columns(4)
+with DTL:
+    metric(
+        "Daily Load",
+        f"{details["Daily_Load"]:.2f}",
+        help="Daily Training Load (Duration × Intensity)"
+    )
+with ATL:
+    metric(
+        "Acute Load",
+        f"{details["Acute_Load"]:.2f}",
+        help="Acute Training Load (7-day rolling average)"
+    )
+with CTL:
+    metric(
+        "Chronic Load",
+        f"{details["Chronic_Load"]:.2f}",
+        help="Chronic Training Load (28-day rolling average)"
+    )
+with ACWR:
+    metric(
+        "ACWR",
+        f"{details["ACWR"]:.2f}",
+        delta=get_injury_risk_status(details["ACWR"]),
+        delta_color="off" if details["ACWR"] <= BASE_CONFIG.ACWR.SWEET_SPOT else "inverse",
+        help="Acute-to-Chronic Workload Ratio (Acute Load / Chronic Load)"
+    )
+
+line_chart(
+    athlete_days,
+    x="Day",
+    y=["Daily_Load", "Acute_Load", "Chronic_Load"],
+    width="stretch",
+)
 
 data_editor(
     athlete_days,
-    height=600, width="stretch",
+    height="auto", width="stretch",
     hide_index=True, disabled=True, placeholder="Data Preparation"
 )
 
