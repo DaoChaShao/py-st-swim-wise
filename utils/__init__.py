@@ -18,7 +18,7 @@ and classes designed for general data processing tasks.
 __author__ = "Shawn Yu"
 __version__ = "0.1.0"
 
-from .apis import DeepSeekCompleter
+from .apis import verify_api_key, OpenAIEmbedder, OpenAITextCompleter, DeepSeekCompleter
 from .config import BASE_CONFIG
 from .decorator import beautifier, timer
 from .helper import (Beautifier, Timer,
@@ -31,6 +31,9 @@ from .stats import (RandomSeedForNumpy,
                     load_csv)
 
 __all__ = [
+    "verify_api_key",
+    "OpenAIEmbedder",
+    "OpenAITextCompleter",
     "DeepSeekCompleter",
 
     "BASE_CONFIG",
