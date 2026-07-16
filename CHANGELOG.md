@@ -5,6 +5,7 @@
 
 ### Features
 
+- **prescription:** add AI-powered training prescription generation ([179eebe](https://github.com/DaoChaShao/py-st-swim-wise/commit/179eebec6feda0d46a13571bd6a8d2a210aa0c85))
 - **prescription:** add training prescription generation page with AI integration ([c8ac317](https://github.com/DaoChaShao/py-st-swim-wise/commit/c8ac3176bf0127979596d81d3c0cc0e246953cad))
 - **layout:** add prescription page to application navigation ([b900f76](https://github.com/DaoChaShao/py-st-swim-wise/commit/b900f7693d4599a53975513143ac08e9ec5119bc))
 - **utils:** add OpenAI embedder and text completer with API key verification ([71fd207](https://github.com/DaoChaShao/py-st-swim-wise/commit/71fd2070c6670c48ac30e2adb0ba9eea1b95c4c2))
@@ -75,6 +76,7 @@
 
 ### Code Refactoring
 
+- **prescription:** update UI components and error handling ([6315689](https://github.com/DaoChaShao/py-st-swim-wise/commit/6315689f5d6e0298e46eff9362caac7b0d5fb0e6))
 - **preview:** optimize session state initialization and column selection ([ff2e34b](https://github.com/DaoChaShao/py-st-swim-wise/commit/ff2e34b575e70e284842131cd551f6d7f2e82e5d))
 - **preview:** migrate data loading to session state management ([112c328](https://github.com/DaoChaShao/py-st-swim-wise/commit/112c3287a76300072a6afb9ef4f7ff4ae8fe3480))
 - **subpages:** remove unused home module from __all__ export ([8d8f9dd](https://github.com/DaoChaShao/py-st-swim-wise/commit/8d8f9dd0ee0f31c2d6b90d4801b2e8f4d873e438))
