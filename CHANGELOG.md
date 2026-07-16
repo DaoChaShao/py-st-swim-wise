@@ -1,10 +1,14 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-swim-wise/compare/3ff046854ffa7d31e8dbf8e65e4893c7f228bcd4...0.1.0) (2026-07-15)
+## [0.1.0](https://github.com/DaoChaShao/py-st-swim-wise/compare/3ff046854ffa7d31e8dbf8e65e4893c7f228bcd4...0.1.0) (2026-07-16)
 
 ### Features
 
+- **prescription:** add training prescription generation page with AI integration ([c8ac317](https://github.com/DaoChaShao/py-st-swim-wise/commit/c8ac3176bf0127979596d81d3c0cc0e246953cad))
+- **layout:** add prescription page to application navigation ([b900f76](https://github.com/DaoChaShao/py-st-swim-wise/commit/b900f7693d4599a53975513143ac08e9ec5119bc))
+- **utils:** add OpenAI embedder and text completer with API key verification ([71fd207](https://github.com/DaoChaShao/py-st-swim-wise/commit/71fd2070c6670c48ac30e2adb0ba9eea1b95c4c2))
+- **utils:** add new API key verification and completion services ([4040ef3](https://github.com/DaoChaShao/py-st-swim-wise/commit/4040ef3a1c78be8b9a2eb37a01108a78b3d5bc43))
 - **deps:** add openai dependency to project ([3026514](https://github.com/DaoChaShao/py-st-swim-wise/commit/302651495ecc7f1c11ad92d65591c269889e6666))
 - **utils:** add DeepSeek API wrapper for chat completions ([77ab915](https://github.com/DaoChaShao/py-st-swim-wise/commit/77ab9153f085bdceb195716b8fce1acff424b2b8))
 - **utils:** add DeepSeekCompleter to utils module ([fda85a0](https://github.com/DaoChaShao/py-st-swim-wise/commit/fda85a06ca01086668d8c1f52d73c5f4c3da1f08))
@@ -47,6 +51,7 @@
 
 ### Chore
 
+- **project:** add initial changelog and update documentation formatting ([0a2b6d1](https://github.com/DaoChaShao/py-st-swim-wise/commit/0a2b6d1c29302b542a691d37805cb4e32ac3db87))
 - **project:** add initial changelog for version 0.1.0 ([b3c4317](https://github.com/DaoChaShao/py-st-swim-wise/commit/b3c4317ce6f02dd80e0243bf188ee8ca7fec0aab))
 - **deps:** update uv.lock with new package dependencies ([0e4ed53](https://github.com/DaoChaShao/py-st-swim-wise/commit/0e4ed53d94c68b1df5cc86b0dd4b1cad8537b31d))
 - **subpages:** explicitly state package exports no public APIs ([ef95030](https://github.com/DaoChaShao/py-st-swim-wise/commit/ef9503096c236eebf5e9df38bd953d6c2497ec64))
