@@ -5,7 +5,7 @@
 
 ### Features
 
-- **prescription:** add AI-powered training prescription generation ([179eebe](https://github.com/DaoChaShao/py-st-swim-wise/commit/179eebec6feda0d46a13571bd6a8d2a210aa0c85))
+- **prescription:** add AI-powered training prescription generation ([5125caa](https://github.com/DaoChaShao/py-st-swim-wise/commit/5125caadeb38caff06f8facea49ffdb00eba2a65))
 - **prescription:** add training prescription generation page with AI integration ([c8ac317](https://github.com/DaoChaShao/py-st-swim-wise/commit/c8ac3176bf0127979596d81d3c0cc0e246953cad))
 - **layout:** add prescription page to application navigation ([b900f76](https://github.com/DaoChaShao/py-st-swim-wise/commit/b900f7693d4599a53975513143ac08e9ec5119bc))
 - **utils:** add OpenAI embedder and text completer with API key verification ([71fd207](https://github.com/DaoChaShao/py-st-swim-wise/commit/71fd2070c6670c48ac30e2adb0ba9eea1b95c4c2))
@@ -46,6 +46,7 @@
 
 ### Bug Fixes
 
+- **prescription:** resolve conditional logic and variable initialization issues ([c19ea2d](https://github.com/DaoChaShao/py-st-swim-wise/commit/c19ea2dd107498cfa15be65990b53350ee954d0a))
 - **docs:** correct spacing and formatting in Chinese README ([7fa6f0e](https://github.com/DaoChaShao/py-st-swim-wise/commit/7fa6f0e1bdae43cc4ccee2e9a723577c407ad5ea))
 - **preparation:** update warning message for file upload requirement ([a93ba77](https://github.com/DaoChaShao/py-st-swim-wise/commit/a93ba77a6381ff01c8888a82c905ed7af91d70c8))
 - **preparation:** ensure data filtering uses rest columns selection ([fd8d041](https://github.com/DaoChaShao/py-st-swim-wise/commit/fd8d0416abe67b5bce1fb019b8ee528bcdd98b77))
