@@ -82,30 +82,30 @@ role: str = (
     "You excel at analyzing physiological markers alongside training loads to prescribe "
     "precision training adjustments and minimize injury risks."
 )
-if language:
-    prompt: str = f"""
-    The data of Athlete {athlete} on Day {day} shows as follows:
-    - Daily Load: {details['Daily_Load']:.1f} (Duration × Intensity)
-    - Sleep Duration: {details['Sleep_Duration_Hours']:.1f} hours
-    - Resting Heart Rate: {details['Resting_Heart_Rate']:.0f} bpm
-    - HRV: {details['HRV_ms']:.1f} ms
-    - Recovery Score: {details['Recovery_Score']:.0f}/100
-    - Acute Load: {details['Acute_Load']:.1f}
-    - Chronic Load: {details['Chronic_Load']:.1f}
-    - ACWR: {details['ACWR']:.2f} (Current Status Zone: {get_injury_risk_status(details['ACWR'])})
-    
-    Based on the sports science data above, please provide a highly professional, concise, and actionable training prescription for today. 
-    Structure your response strictly into the following 3 sections in {language} using Markdown:
-    
-    ### ⚖️ 1. Status Diagnosis | 状态诊断
-    Analyze if the athlete's current fatigue (ACWR) aligns with their physiological recovery (HRV, Sleep, Resting HR). State the core issue in one sharp sentence.
-    
-    ### 🏊‍♂️ 2. Training Load Adjustment | 训练负荷调整
-    Give explicit, quantifiable coaching advice for today's session (e.g., 'Maintain planned load', 'Reduce volume by 30%', 'Active recovery session only', or 'Complete rest').
-    
-    ### 🧘‍♂️ 3. Targeted Recovery Interventions | 目标恢复干预
-    Recommend 1-2 specific recovery protocols based on their fatigue levels (e.g., cold-water immersion, active stretching, sleep extension).
-    """
+
+prompt: str = f"""
+The data of Athlete {athlete} on Day {day} shows as follows:
+- Daily Load: {details['Daily_Load']:.1f} (Duration × Intensity)
+- Sleep Duration: {details['Sleep_Duration_Hours']:.1f} hours
+- Resting Heart Rate: {details['Resting_Heart_Rate']:.0f} bpm
+- HRV: {details['HRV_ms']:.1f} ms
+- Recovery Score: {details['Recovery_Score']:.0f}/100
+- Acute Load: {details['Acute_Load']:.1f}
+- Chronic Load: {details['Chronic_Load']:.1f}
+- ACWR: {details['ACWR']:.2f} (Current Status Zone: {get_injury_risk_status(details['ACWR'])})
+
+Based on the sports science data above, please provide a highly professional, concise, and actionable training prescription for today. 
+Structure your response strictly into the following 3 sections in {language} using Markdown:
+
+### ⚖️ 1. Status Diagnosis | 状态诊断
+Analyze if the athlete's current fatigue (ACWR) aligns with their physiological recovery (HRV, Sleep, Resting HR). State the core issue in one sharp sentence.
+
+### 🏊‍♂️ 2. Training Load Adjustment | 训练负荷调整
+Give explicit, quantifiable coaching advice for today's session (e.g., 'Maintain planned load', 'Reduce volume by 30%', 'Active recovery session only', or 'Complete rest').
+
+### 🧘‍♂️ 3. Targeted Recovery Interventions | 目标恢复干预
+Recommend 1-2 specific recovery protocols based on their fatigue levels (e.g., cold-water immersion, active stretching, sleep extension).
+"""
 
 provider: str = sidebar.selectbox(
     "LLM Service Provider",
@@ -146,8 +146,10 @@ match provider:
         )
     case _:
         sidebar.warning("Please select a valid LLM service provider.")
+        model: str | None = None
+        api_key: str | None = None
 
-if api_key:
+if model and api_key:
     if verify_api_key(api_key, f"{provider.lower()}"):
         NOTIFICATIONS.success(f"{provider} API key is valid and ready to use.")
 
@@ -155,13 +157,15 @@ if api_key:
             match provider:
                 case "OpenAI":
                     completer = OpenAITextCompleter(api_key)
-                    response = completer.client(role=role, prompt=prompt, model=model)
+                    response: str = completer.client(role=role, prompt=prompt, model=model)
                 case "Deepseek":
                     completer = DeepSeekCompleter(api_key)
-                    response = completer.client(role=role, prompt=prompt, model=model)
+                    response: str = completer.client(role=role, prompt=prompt, model=model)
                 case _:
                     NOTIFICATIONS.error("Please select a valid LLM service provider.")
+                    response: str | None = None
 
-            markdown(response)
+            if response:
+                markdown(response)
     else:
         NOTIFICATIONS.error(f"Invalid {provider} API key.")
