@@ -9,7 +9,7 @@ from openai import api_key
 from pandas import DataFrame, Series
 from streamlit import (empty, session_state, stop,
                        columns, selectbox, metric, line_chart,
-                       sidebar)
+                       sidebar, markdown)
 
 from app.tools import get_injury_risk_status
 from utils import BASE_CONFIG, verify_api_key, OpenAITextCompleter, DeepSeekCompleter
@@ -20,8 +20,6 @@ DISPLAYER = empty()
 if "CALC" not in session_state:
     NOTIFICATIONS.warning("Please upload a file first.")
     stop()
-
-PRESCRIPTION = empty()
 
 left, right = columns(2)
 with left:
@@ -161,7 +159,9 @@ if api_key:
                 case "Deepseek":
                     completer = DeepSeekCompleter(api_key)
                     response = completer.client(role=role, prompt=prompt, model=model)
+                case _:
+                    NOTIFICATIONS.error("Please select a valid LLM service provider.")
 
-            PRESCRIPTION.markdown(response)
+            markdown(response)
     else:
         NOTIFICATIONS.error(f"Invalid {provider} API key.")
