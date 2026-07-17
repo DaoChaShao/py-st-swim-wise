@@ -1,7 +1,7 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/DaoChaShao/py-st-swim-wise/compare/3ff046854ffa7d31e8dbf8e65e4893c7f228bcd4...0.1.0) (2026-07-16)
+## [0.1.0](https://github.com/DaoChaShao/py-st-swim-wise/compare/3ff046854ffa7d31e8dbf8e65e4893c7f228bcd4...0.1.0) (2026-07-17)
 
 ### Features
 
@@ -55,6 +55,7 @@
 
 ### Chore
 
+- rename the LICENCE file ([cba3831](https://github.com/DaoChaShao/py-st-swim-wise/commit/cba38313a91453b89b7b6c347e0d9310acab3cea))
 - **project:** add initial changelog and update documentation formatting ([0a2b6d1](https://github.com/DaoChaShao/py-st-swim-wise/commit/0a2b6d1c29302b542a691d37805cb4e32ac3db87))
 - **project:** add initial changelog for version 0.1.0 ([b3c4317](https://github.com/DaoChaShao/py-st-swim-wise/commit/b3c4317ce6f02dd80e0243bf188ee8ca7fec0aab))
 - **deps:** update uv.lock with new package dependencies ([0e4ed53](https://github.com/DaoChaShao/py-st-swim-wise/commit/0e4ed53d94c68b1df5cc86b0dd4b1cad8537b31d))
@@ -71,6 +72,7 @@
 
 ### Docs
 
+- **changelog:** update changelog with missing entries ([19b5e0a](https://github.com/DaoChaShao/py-st-swim-wise/commit/19b5e0a33d071b0461c09b07e6563f3cc9536130))
 - **README:** add data description and privacy statement ([a2469fe](https://github.com/DaoChaShao/py-st-swim-wise/commit/a2469fe2571f9e88e4404eefb9b5cd73f559fc01))
 - **dataset:** add multimodal wearable swimming dataset documentation ([bdc12f4](https://github.com/DaoChaShao/py-st-swim-wise/commit/bdc12f462daa77aa04a3be8c81b9a614c2c07985))
 - **utils:** update docstrings for highlighter utility functions ([87b547d](https://github.com/DaoChaShao/py-st-swim-wise/commit/87b547df1d8fcfa09e9ea1de9a894b6812bac7e5))
